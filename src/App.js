@@ -11,6 +11,8 @@ function App() {
     symbols: true
   });
 
+  const lenPercent = (len - 4) / (32 - 4) * 100;
+
   return (
     <div id="pwgen">
       <h2>Generate Password</h2>
@@ -23,13 +25,11 @@ function App() {
         <h5>Length: <b>{len}</b></h5>
         <div className="control-group">
           4
-          <input
-            type="number"
-            min="4"
-            max="32"
-            value={len}
-            onChange={e => setLength(e.target.value)}
-          />
+
+          <input id="len-input" type="range" min="4" max="32" value={len}
+            style={{background: `linear-gradient(90deg, rgb(11, 30, 223) ${lenPercent}%, rgba(255, 255, 255, 0.216) ${lenPercent}%)`}}
+            onChange={e => setLength(e.target.value)} />
+
           32
         </div>
 
