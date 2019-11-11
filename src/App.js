@@ -12,23 +12,26 @@ function App() {
   });
 
   return (
-    <div className="App">
-      <header>Generate Password</header>
+    <div id="pwgen">
+      <h2>Generate Password</h2>
 
-      <div className="password" onClick={() => copy(password)}>
+      <div className="result" onClick={() => copy(password)}>
         {password || 'CLICK GENERATE'}
       </div>
 
       <form onSubmit={handleSubmit}>
-        4
-        <input
-          type="number"
-          min="4"
-          max="32"
-          value={len}
-          onChange={e => setLength(e.target.value)}
-        />
-        32
+        <div>LENGTH: {len}</div>
+        <div className="control-group">
+          4
+          <input
+            type="number"
+            min="4"
+            max="32"
+            value={len}
+            onChange={e => setLength(e.target.value)}
+          />
+          32
+        </div>
 
         {
           [
