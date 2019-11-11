@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
 * {
 	margin: 0;
 	padding: 0;
@@ -9,12 +11,23 @@ body {
 	height: 100%;
 	background: #0a0e31;
   color: #fff;
+  font-family: "Montserrat", sans-serif;
 }
 
 h2 {
   font-size: 1.75rem;
   margin: 10px -5px;
   margin-bottom: 30px;
+  color: #fff;
+}
+
+h5 {
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: normal;
+}
+
+h5 b {
   color: #fff;
 }
 
@@ -86,4 +99,49 @@ input[type=submit]:active {
 	font-size: 0.65rem;
 	pointer-events: none;
 	user-select: none;
+}
+
+.flipswitch {
+  position: relative;
+  background: rgba(214, 214, 214, 0.434);
+  width: 50px;
+  height: 30px;
+  -webkit-appearance: initial;
+  border-radius: 30px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  outline: none;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.flipswitch:after {
+  position: absolute;
+  top: 50%;
+  display: block;
+  line-height: 32px;
+  width: 24px;
+  height: 24px;
+  background: #fff;
+  box-sizing: border-box;
+  text-align: center;
+  transition: all 0.3s ease-in 0s;
+  color: black;
+  border: #888 1px solid;
+  border-radius: 50%;
+  transform: translate(0, -50%);
+}
+
+.flipswitch:after {
+  content: "";
+  transform: translate(10%, -50%);
+}
+
+.flipswitch:checked {
+  background-color: #5d68e2;
+}
+
+.flipswitch:checked:after {
+  transform: translate(100%, -50%);
 }

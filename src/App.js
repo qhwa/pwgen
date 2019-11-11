@@ -20,7 +20,7 @@ function App() {
       </div>
 
       <form onSubmit={handleSubmit}>
-        <div>LENGTH: {len}</div>
+        <h5>Length: <b>{len}</b></h5>
         <div className="control-group">
           4
           <input
@@ -33,6 +33,7 @@ function App() {
           32
         </div>
 
+        <h5>Settings:</h5>
         {
           [
             ['uppercase', 'Include Uppercase'],
@@ -43,6 +44,7 @@ function App() {
             <div key={key} className="control-group">
               <label>{label}</label>
               <input
+                className="flipswitch"
                 type="checkbox"
                 checked={sw[key]}
                 onChange={e => updateSwitches({
