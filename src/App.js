@@ -11,6 +11,8 @@ function App() {
     symbols: true
   });
 
+  const lenPercent = (len - 4) / (32 - 4) * 100;
+
   return (
     <div id="pwgen">
       <h2>Generate Password</h2>
@@ -20,19 +22,18 @@ function App() {
       </div>
 
       <form onSubmit={handleSubmit}>
-        <div>LENGTH: {len}</div>
+        <h5>Length: <b>{len}</b></h5>
         <div className="control-group">
           4
-          <input
-            type="number"
-            min="4"
-            max="32"
-            value={len}
-            onChange={e => setLength(e.target.value)}
-          />
+
+          <input id="len-input" type="range" min="4" max="32" value={len}
+            style={{background: `linear-gradient(90deg, rgb(11, 30, 223) ${lenPercent}%, rgba(255, 255, 255, 0.216) ${lenPercent}%)`}}
+            onChange={e => setLength(e.target.value)} />
+
           32
         </div>
 
+        <h5>Settings:</h5>
         {
           [
             ['uppercase', 'Include Uppercase'],
@@ -43,6 +44,7 @@ function App() {
             <div key={key} className="control-group">
               <label>{label}</label>
               <input
+                className="flipswitch"
                 type="checkbox"
                 checked={sw[key]}
                 onChange={e => updateSwitches({
