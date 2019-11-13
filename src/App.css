@@ -7,11 +7,18 @@
 }
 
 body {
-	width: 100%;
+	max-width: 375px;
 	height: 100%;
 	background: #0a0e31;
   color: #fff;
   font-family: "Montserrat", sans-serif;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width:415px) {
+  body {
+    max-width:415px;
+  }
 }
 
 h2 {
@@ -170,8 +177,4 @@ input[type=submit]:active {
   cursor: pointer;
   transition: all 0.15s ease-in-out;
   background-color: white;
-}
-
-.rangeslider-horizontal .rangeslider__fill {
-
 }
